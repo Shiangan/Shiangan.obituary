@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訃聞生成表單</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>訃聞生成表單</h1>
+        <form action="obituary.html" method="GET">
+            <label for="name">亡者姓名:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="birthDate">出生日期:</label>
+            <input type="date" id="birthDate" name="birthDate" required><br><br>
+
+            <label for="deathDate">逝世日期:</label>
+            <input type="date" id="deathDate" name="deathDate" required><br><br>
+
+            <label for="obituaryContent">訃聞內容:</label><br>
+            <textarea id="obituaryContent" name="obituaryContent" rows="4" cols="50" required></textarea><br><br>
+
+            <label for="funeralLocation">出殯地點:</label>
+            <input type="text" id="funeralLocation" name="funeralLocation" required><br><br>
+
+            <label for="memorialLocation">安靈地點:</label>
+            <input type="text" id="memorialLocation" name="memorialLocation" required><br><br>
+
+            <label for="photoUrl">亡者照片URL:</label>
+            <input type="url" id="photoUrl" name="photoUrl" required><br><br>
+
+            <input type="submit" value="生成訃聞">
+        </form>
+    </div>
+</body>
+</html>
