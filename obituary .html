@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訃聞公告</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>訃聞公告</h1>
+        </header>
+
+        <div class="main-content">
+            <section class="section">
+                <h2>亡者照片</h2>
+                <img id="mainPhoto" alt="亡者照片" class="main-photo">
+            </section>
+
+            <section class="section">
+                <h2>亡者姓名</h2>
+                <p id="name"></p>
+            </section>
+
+            <section class="section">
+                <h2>生歿日期</h2>
+                <p>出生日期: <span id="birthDate"></span></p>
+                <p>逝世日期: <span id="deathDate"></span></p>
+            </section>
+
+            <section class="section">
+                <h2>訃聞</h2>
+                <p id="obituaryContent"></p>
+                <p id="obituaryNotice"></p>
+            </section>
+
+            <section class="section">
+                <h2>出殯及安靈地址</h2>
+                <p>出殯地點: <span id="funeralLocation"></span></p>
+                <p>安靈地點: <span id="memorialLocation"></span></p>
+            </section>
+
+            <section class="section">
+                <h2>禮儀師</h2>
+                <p>禮儀師: 陳妍如</p>
+                <p>聯絡電話: +886978583699</p>
+            </section>
+
+            <section class="section">
+                <h2>致贈花籃</h2>
+                <a href="https://line.me/ti/p/您的LINE_ID" class="btn">致贈花籃請點選我</a>
+                <p>為求會場一致 統一佈置</p>
+            </section>
+
+            <section class="section">
+                <h2>問卷</h2>
+                <a href="https://github.com/Shiangan/foreverlove-/blob/main/index.html" class="btn">點此填寫問卷</a>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            const birthDate = urlParams.get('birthDate');
+            const deathDate = urlParams.get('deathDate');
+            const obituaryContent = urlParams.get('obituaryContent');
+            const funeralLocation = urlParams.get('funeralLocation');
+            const memorialLocation = urlParams.get('memorialLocation');
+            const photoUrl = urlParams.get('photoUrl');
+
+            document.getElementById('mainPhoto').src = photoUrl;
+            document.getElementById('name').textContent = name;
+            document.getElementById('birthDate').textContent = birthDate;
+            document.getElementById('deathDate').textContent = deathDate;
+            document.getElementById('obituaryContent').textContent = obituaryContent;
+            document.getElementById('funeralLocation').textContent = funeralLocation;
+            document.getElementById('memorialLocation').textContent = memorialLocation;
+            document.getElementById('obituaryNotice').textContent = `${name} 的訃告`;
+        });
+    </script>
+</body>
+</html>
